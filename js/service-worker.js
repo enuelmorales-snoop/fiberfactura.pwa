@@ -150,38 +150,21 @@ function setOfCachedUrls(cache) {
   });
 }
 
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return setOfCachedUrls(cache).then(function(cachedUrls) {
-        return Promise.all(
-          Array.from(urlsToCacheKeys.values()).map(function(cacheKey) {
-            // If we don't have a key matching url in the cache already, add it.
-            if (!cachedUrls.has(cacheKey)) {
-              var request = new Request(cacheKey, {credentials: 'same-origin'});
-              return fetch(request).then(function(response) {
-                // Bail out of installation unless we get back a 200 OK for
-                // every request.
-                if (!response.ok) {
-                  throw new Error('Request for ' + cacheKey + ' returned a ' +
-                    'response with status ' + response.status);
-                }
+self.addEventListener('foreignfetch', event => {
+	event.respondWith(fetch(event.request).then(response => {
+		return {
+			response: response,
+			origin: event.origin,
+			headers: ['Content-Type']
+		}
+	}));
+});
 
-                return cleanResponse(response).then(function(responseToCache) {
-                  return cache.put(cacheKey, responseToCache);
-                });
-              });
-            }
-          })
-        );
-      });
-    }).then(function() {
-      
-      // Force the SW to transition from installing -> active state
-      return self.skipWaiting();
-      
-    })
-  );
+self.addEventListener('install', function(event) {
+	event.registerForeignFetch({
+		scopes:['/'],
+		origins:['*'] // or simply '*' to allow all origins
+	});
 });
 
 self.addEventListener('activate', function(event) {
