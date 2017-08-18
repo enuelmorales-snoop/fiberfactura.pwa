@@ -20,7 +20,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "aliceblue",
-  "background_color": "red",
+  "background_color": "white",
   "related_applications": [
     {
       "platform": "web",
