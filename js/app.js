@@ -23,6 +23,8 @@ angular.module('appFactura', ['ionic', 'appFactura.controllers', 'appFactura.mod
       window.StatusBar.styleDefault();
     }
 
+    registerPushNotificationHandler($ionicPopup);
+
     if ( $window.analytics ) {
       $cordovaGoogleAnalytics.startTrackerWithId('UA-36276739-12');
       $cordovaGoogleAnalytics.setUserId('auto');
