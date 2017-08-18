@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' gap: file: ws: wss: http: https: filesystem: blob: data: 'unsafe-eval' 'unsafe-inline;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com *;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' http: https: *;
+    img-src 'self' blob: data: http: https: filesystem: *;
+    connect-src 'self' http: https: *;
+    ">
     <title></title>
 
     <link rel="manifest" href="manifest.json">
