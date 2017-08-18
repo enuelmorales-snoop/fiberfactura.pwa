@@ -1,0 +1,31 @@
+<ion-view hide-back-button="true">
+	<div class="bar bar-subheader bar-subheader-custom">
+		<div class="tab-fibertel-title" ng-click="$ionicGoBack()">
+			<i class="icon ion-chevron-left icon-accessory" style="color:white;" ng-click="$ionicGoBack()">  </i>
+			Medios de Pago
+    </div>
+	</div>
+
+	<ion-content class="tab-fibertel-content has-subheader content-custom" delegate-handle="contentDelegate" overflow-scroll="false">
+
+				<ion-item id="medioDePago{{$index}}" class="item item-text-wrap noflash-item" style="padding-top: 34px; padding-bottom: 34px;" ng-repeat="medioDePago in data.mediosDePago track by $index" ng-click="scrollToTop($index, medioDePago)">
+
+					<div ng-if="!medioDePago.expanded" class="item-icon-right" style="font-family: latoregular; color:#808080; font-size:18px; margin: 0px; padding:0px;" >
+						{{medioDePago.title}}
+	        	<i class="icon ion-chevron-down icon-accessory" style="color:#808080; align-items:center;"></i>
+					</div>
+
+					<div ng-if="medioDePago.expanded" class="item-icon-right" style="font-family: latoregular; color:#f02933; font-size:18px; margin: 0px; padding:0px;">
+						{{medioDePago.title}}
+	        	<i class="icon ion-chevron-up icon-accessory" style="color:#f02933; padding-top:39px; align-items:baseline;"></i>
+					</div>
+
+					<h3 ng-if="medioDePago.expanded" style="font-family: latolight; color:#808080; font-size:17px; margin: 0px; padding-top:15px;" ng-bind-html="trustAsHtml(medioDePago.description)"></h3>
+
+				</ion-item>
+
+
+
+  </ion-content>
+
+</ion-view>

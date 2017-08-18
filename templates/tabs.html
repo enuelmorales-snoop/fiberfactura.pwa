@@ -1,0 +1,64 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-only tabs-dark">
+  <!--DISENIO CELULAR -->
+
+  <!-- Mis Datos Tab -->
+  <ion-tab ng-if="device === 'SMARTPHONE'" title="Facturas" class="ocultar_en_tablet" icon-off="icon-fibertel-facturas-outline" icon-on="icon-fibertel-facturas" ng-click="goToState('tab.misFacturas')">
+    <ion-nav-view name="tab-misFacturas"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Mis Notificaciones Tab -->
+  <ion-tab ng-if="device === 'SMARTPHONE'" title="Mensajes" class="ocultar_en_tablet" icon-off="icon-fibertel-inbox-outline" icon-on="icon-fibertel-inbox" badge="data.badgeCount" badge-style="badge-fibertel" ng-click="goToState('tab.inbox')">
+    <ion-nav-view name="tab-inbox"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Home Tab -->
+  <ion-tab ng-if="device === 'SMARTPHONE'" class="fiber-home-tab ocultar_en_tablet" title="Inicio" icon-off="icon-fibertel-home-outline" icon-on="icon-fibertel-home" ng-click="goToState('tab.home')">
+    <ion-nav-view name="tab-home"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Contacto Tab -->
+  <ion-tab ng-if="device === 'SMARTPHONE'" title="Contacto" class="ocultar_en_tablet" icon-off="icon-fibertel-contacto-outline" icon-on="icon-fibertel-contacto" ng-click="goToState('tab.contacto')">
+    <ion-nav-view name="tab-contacto"></ion-nav-view>
+  </ion-tab>
+
+
+  <!-- FAQ Tab -->
+  <ion-tab ng-if="device === 'SMARTPHONE'" title="Ayuda" class="ocultar_en_tablet" icon-off="icon-fibertel-faq-outline" icon-on="icon-fibertel-faq" ng-click="goToState('tab.faq')">
+    <ion-nav-view name="tab-faq"></ion-nav-view>
+  </ion-tab>
+
+
+  <!--DISENIO TABLET -->
+
+  <!-- Home Tab -->
+  <ion-tab ng-if="device === 'TABLET'" title="Inicio"   style="margin-top: -2px;"class="fiber-home-tab botones_tablet" icon-off="icon-fibertel-home-outline" icon-on="icon-fibertel-home" ng-click="goToState('tab.home')">
+    <ion-nav-view name="tab-home"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Mis Datos Tab -->
+  <ion-tab ng-if="device === 'TABLET'" title="Facturas" class="botones_tablet" icon-off="icon-fibertel-facturas-outline" icon-on="icon-fibertel-facturas" ng-click="goToState('tab.misFacturas')">
+    <ion-nav-view name="tab-misFacturas"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Mis Notificaciones Tab -->
+  <ion-tab ng-if="device === 'TABLET'" title="Mensajes" class="botones_tablet" icon-off="icon-fibertel-inbox-outline" icon-on="icon-fibertel-inbox" badge="data.badgeCount" badge-style="badge-fibertel" ng-click="goToState('tab.inbox')">
+    <ion-nav-view name="tab-inbox"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Contacto Tab -->
+  <ion-tab ng-if="device === 'TABLET'" title="Contacto" class="botones_tablet" icon-off="icon-fibertel-contacto-outline" icon-on="icon-fibertel-contacto" ng-click="goToState('tab.contactoTablet')">
+    <ion-nav-view name="tab-contacto-tablet"></ion-nav-view>
+  </ion-tab>
+
+
+  <!-- FAQ Tab -->
+  <ion-tab ng-if="device === 'TABLET'" title="Ayuda" class="botones_tablet" icon-off="icon-fibertel-faq-outline" icon-on="icon-fibertel-faq" ng-click="goToState('tab.faq')">
+    <ion-nav-view name="tab-faq"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

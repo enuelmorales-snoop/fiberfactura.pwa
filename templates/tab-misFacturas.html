@@ -1,0 +1,94 @@
+<ion-view hide-back-button="true">
+	<div class="bar bar-subheader bar-subheader-custom">
+		<div class="tab-fibertel-title">
+			Mis Facturas
+		</div>
+  </div>
+	<ion-content class="tab-fibertel-content has-subheader content-custom" overflow-scroll="false">
+
+
+
+		<ion-item class="item-avatar item-icon-right fibertel-home-header" type="item-text-wrap" ng-click="openFacturasPopover($event)($event)">
+	        <img ng-src="img/avatar-home.svg">
+	        <h2 class="fibertel-home-address">{{data.contratos[data.selectedContrato].address[0]}}</h2>
+	        <p class="fibertel-home-area">{{data.contratos[data.selectedContrato].address[1]}}</p>
+	        <i id="misfacturas-header-icon-right" class="icon ion-chevron-down icon-accessory" style="color: #f02933;"></i>
+	    </ion-item>
+
+		<div class="padding" style="position: absolute; top: 103px; bottom: 0px; left: 0px; right: 0px;">
+
+			<!--<div class="card" style="margin-bottom: 0px; height:calc(100% - 50px)!important;">-->
+			<div class="card" style="margin-bottom: 0px;">
+
+				<div class="item item-text-wrap" style="padding:0px; text-align:center;">
+					<p style="color:#808080; font-size:13px; padding-top:5px; margin:0px;">Estado de Cuenta</p>
+					<h2 ng-show="data.contratos[data.selectedContrato].balance != 0" style="color:#f02933; font-size:37px; margin:0px;"><small style="vertical-align: middle;">$</small>{{data.contratos[data.selectedContrato].balance}}</h2>
+					<p ng-show="data.contratos[data.selectedContrato].balance != 0" style="color:#f02933; font-size:13px; padding-bottom:5px; margin:0px;">Total a pagar</p>
+					<h2 ng-show="data.contratos[data.selectedContrato].balance == 0" style="color:#808080; font-size:37px; margin:0px;"><small style="vertical-align: middle;">$</small>{{data.contratos[data.selectedContrato].balance}}</h2>
+					<p ng-show="data.contratos[data.selectedContrato].balance == 0" style="font-size:13px; padding-bottom:5px; margin:0px;">No registra deuda</p>
+				</div>
+
+				<div class="fibertel-list-header row">
+		        	<span class="col col-30" style="padding:0px;" align="center">FACTURA</span>
+		        	<span class="col col-25" style="padding:0px;" align="center">VENCE</span>
+		        	<span class="col col-25" style="padding:0px;" align="center">IMPORTE</span>
+		        	<span class="col col-20" style="padding:0px;" align="center">VER</span>
+		      	</div>
+
+				<!--<ion-scroll zooming="true" direction="y" style="height:100%; width:100%;">-->
+
+				<ion-list>
+					<ion-item ng-repeat="factura in data.contratos[data.selectedContrato].facturas track by $index" class="item row" type="item-text-wrap" style="padding:0px; height:10%">
+			        	<div class="col col-30 fibertel-list-item" align="center">
+			          	<p style="margin:0px;">{{factura.nFactura.split('-')[0]}}-</p>
+			          	<p>{{factura.nFactura.split('-')[1]}}</p>
+			        	</div>
+			        	<div class="col col-25 fibertel-list-item" align="center">
+			          	<p style="margin:0px;">{{factura.vencimiento.split('-')[0]}}-{{factura.vencimiento.split('-')[1]}}</p>
+			          	<p>{{factura.vencimiento.split('-')[2]}}</p>
+			        	</div>
+			        	<p class="col col-25 fibertel-list-item" style="padding-top:18px;" align="center">${{factura.importe}}</p>
+			        	<div ng-click="openPDF(factura)" class="col col-20 fibertel-list-item" style="padding-top:15px; padding-left:8px;" align="center"><img src="img/pdf.svg" class ="openPdfIcon" style="max-width:20px;"></img></div>
+				  	</ion-item>
+				</ion-list>
+
+				<!--</ion-scroll>-->
+
+			</div>
+
+			<a ng-click="goToState('tab.home-pago-telefonico')" class="col botones_tablet fibertel-button-red" >
+				<i class="icon icon-fibertel-phone-small" style="padding-right:5px;"></i>Pago Telefónico
+			</a>
+			<a class="col botones_tablet fibertel-button-grey" ng-click="goToState('tab.misFacturas-mediosDePago')">
+				<i class="icon icon-fibertel-medios-pago" style="padding-right:5px;"></i>Medios de Pago
+			</a>
+
+			<div style="height:50px;"></div>
+<!--
+			<div class="row" style="padding:0px; margin-top:15px;">
+				<a ng-href="tel:08101222225" class="col fibertel-button-red" style="font-size: 14px; margin-right:6px;">
+					<i class="icon icon-fibertel-phone-small" style="padding-right:5px;"></i>Pago Telefónico
+				</a>
+				<a class="col fibertel-button-grey" style="font-size: 14px; margin-left:6px;" ng-click="goToState('tab.misFacturas-mediosDePago')">
+					<i class="icon icon-fibertel-medios-pago" style="padding-right:5px;"></i>Medios de Pago
+				</a>
+			</div>
+-->
+
+
+		</div>
+
+  </ion-content>
+
+
+		<div class="bar bar-footer sub-footer ocultar_en_tablet" style="height:50px; background-color:#e3e3e3;">
+			<a ng-href="tel:08101222225" class="col fibertel-button-red" style="font-size: 14px; margin-right:6px;">
+				<i class="icon icon-fibertel-phone-small" style="padding-right:5px;"></i>Pago Telefónico
+			</a>
+			<a class="col fibertel-button-grey" style="font-size: 14px; margin-left:6px;" ng-click="goToState('tab.misFacturas-mediosDePago')">
+				<i class="icon icon-fibertel-medios-pago" style="padding-right:5px;"></i>Medios de Pago
+			</a>
+		</div>
+
+
+</ion-view>

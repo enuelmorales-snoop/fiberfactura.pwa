@@ -1,0 +1,44 @@
+<ion-view hide-back-button="true">
+	<ion-content class="tab-fibertel-content">
+
+    <div class="tab-fibertel-title">
+      Mis Datos
+    </div>
+
+		<div class="padding">
+
+			<div class="card">
+				<div class="item item-text-wrap" style="padding-top:12px; padding-bottom:12px;">
+					<h1 style="font-family: 'latoregular'; color:#f02933; font-size:15px; padding-bottom: 5px;">TITULAR</h1>
+        	<h2 style="color:#808080;">Nombre: <span style="color:#2c2c2c;">{{data.user.name}}</span></h2>
+					<h2 style="color:#808080;">Apellido: <span style="color:#2c2c2c;">{{data.user.lastName}}</span></h2>
+        	<h2 style="color:#808080;">N° de Cliente: <span style="color:#2c2c2c;">{{data.user.nCliente}}</span></h2>
+					<h2 style="color:#808080;">Documento: <span style="color:#2c2c2c;">{{data.user.dni}}</span></h2>
+				</div>
+				<div class="item item-text-wrap" style="padding-top:12px; padding-bottom:12px;">
+					<h1 style="font-family: 'latoregular'; color:#f02933; font-size:15px; padding-bottom: 5px;">CONTACTO</h1>
+        	<h2 style="color:#808080;">Mail: <span style="color:#2c2c2c;">{{data.user.mail}}</span></h2>
+					<h2 style="color:#808080;">Tel: <span style="color:#2c2c2c;">{{data.user.telephone}}</span></h2>
+				</div>
+				<div class="item item-text-wrap" style="padding-top:12px; padding-bottom:12px;">
+					<h1 style="font-family: 'latoregular'; color:#f02933; font-size:15px;">DOMICILIO DE INSTALACIONES Y FACTURACIÓN</h1>
+
+					<form>
+
+					<div class="row" ng-repeat="contrato in data.contratos track by $index" type="item-text-wrap" style="margin-top:10px; padding:0px;" ng-click="changeSelectedContrato($index)">
+						<span class="col col-95" style="color:#808080; margin:0; padding-top:0px; padding-bottom:0px; padding-left:0px; padding-right:5px; font-family: 'latolight';">Dirección: <span style="color:#2c2c2c;">{{contrato.address[0]}}</span></span>
+						<input style="margin-top:3px;" type="radio" name="oneDirection" ng-model="data.selectedContrato" value="{{$index}}">
+					</div>
+
+					</form>
+
+				</div>
+			</div>
+
+			<a ng-click="logOut()" class="fibertel-button-red" >Cerrar sesión</a>
+
+		</div>
+
+  </ion-content>
+
+</ion-view>

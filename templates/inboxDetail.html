@@ -1,0 +1,30 @@
+<ion-view hide-back-button="true">
+
+	<ion-content class="tab-fibertel-content">
+
+    <div class="tab-fibertel-title" ng-click="$ionicGoBack()">
+			<i class="icon ion-chevron-left icon-accessory" style="color:white;">  </i>
+      Mensaje
+    </div>
+
+		<div class="padding">
+
+			<div class="card">
+
+				<ion-item class="item-icon-left" type="item-text-wrap">
+	        <i class="icon icon-fibertel-inbox-read" style="color:#808080;"></i>
+					<h2 style="font-size: 17px; font-family:'latoregular'; color:#808080; margin:0px;">{{inbox.title}}</h2>
+					<p style="font-size: 13px; color:#808080;">{{inbox.date}}</p>
+	      </ion-item>
+
+				<div class="item item-text-wrap">
+	        <h3 style="font-family: 'latolight'; color:#808080; font-size:16px;">{{inbox.content}}</h3>
+	      </div>
+
+			</div>
+
+		</div>
+
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,64 @@
+
+<ion-view hide-back-button="true">
+
+	<div class="bar bar-subheader bar-subheader-custom">
+		<div class="tab-fibertel-title" ng-click="$ionicGoBack()">
+			<i class="icon ion-chevron-left icon-accessory" style="color:white;" ng-click="$ionicGoBack()">  </i>
+			Sucursales
+		</div>
+	</div>
+	<ion-content class="tab-fibertel-content has-subheader content-custom" scroll="false">
+
+		<div style="width: 100%; height: 80%; -moz-box-sizing: border-box; box-sizing: border-box;">
+			<div id="map_canvas" class="map_canvas" style="width: 100%; height: 100%;">
+				<div style="background-color: rgba(255,255,255,0.8); height:62px;" ng-show="data.showDivs">
+					<div style="height:12px;"></div>
+					<div class="item item-input-wrapper" style="background: #d9d9d9; margin-left:12px; margin-right:12px; border:0px; padding:0px;">
+						<input style="background: #d9d9d9; margin:0px;" type="text" placeholder="Buscar sucursal" ng-change="applyFilter();" ng-model="data.buscar">
+						<i class="ion-search placeholder-icon" style="margin:10px;"></i>
+					</div>
+				</div>
+
+				<div style="background-color: rgba(255,255,255,0.8); margin: 15px; border-radius: 4px; padding:5px;" ng-show="data.showDivs && data.sucursalesToShow[0].distance != '' && data.sucursalesToShow.length != 0 && !data.noResultsFromSearch && !isNaN(data.sucursalesToShow[0].distanceToShow)">
+					<div style="font-family: latolight; color:#808080; font-size:14px; margin-bottom:0px;"><i class="ion-ios-location placeholder-icon" style="padding:10px;"></i>Sucursal <b style="color:#f02933;">{{data.sucursalesToShow[0].name}}</b> a <b style="color:#000000;">{{data.sucursalesToShow[0].distanceToShow}} {{data.sucursalesToShow[0].distanceUnit}}</b></div>
+				</div>
+				<div style="background-color: rgba(255,255,255,0.8); margin: 15px; border-radius: 4px; padding:5px;" ng-show="data.showDivs && data.noResultsFromSearch">
+					<div style="font-family: latolight; color:#f02933; font-size:14px; margin-bottom:0px;">No se han encontrado resultados para <b>{{data.buscar}}</b></div>
+				</div>
+
+			</div>
+
+			<!--Listado de sucursales-->
+			<ion-scroll class="overflow-menu-hide-android4_2" scroll-watch delegate-handle="sucursales" direction="y" has-bouncing="false" style="position:absolute; height:100%;">
+				<div style="height:80%;" on-tap="scrollTop()"></div>
+				<ion-list>
+					<ion-item class="item" style="padding-top: 8px; padding-bottom: 8px;" ng-repeat="sucursal in data.sucursalesToShow | limitTo:5" ng-click="centerMapInSucursal(sucursal)">
+						<div class="row" style="padding:0px;">
+							<div class="col col-70" style="font-family: latolight; color:#f02933; font-size:18px; margin: 0px; padding:0px;">{{sucursal.name}}</div>
+							<div ng-show="!isNaN(sucursal.distanceToShow)" class="col col-30" align="right" style="font-family: latolight; color:#f02933; font-size:18px; margin: 0px; padding:0px;">{{sucursal.distanceToShow}} {{sucursal.distanceUnit}}</div>
+						</div>
+						<p style="font-family: latolight; color:#808080; font-size:14px; margin: 0px;">{{sucursal.address}}</p>
+						<p style="font-family: latolight; color:#808080; font-size:14px; margin: 0px;">{{sucursal.ubicacion}}</p>
+					</ion-item>
+				</ion-list>
+			</ion-scroll>
+
+
+			<!--Listado de sucursales-->
+				<ion-list delegate-handle="animateSlide" class="animate-slide overflow-menu-show-android4_2" ng-click="data.slide = !data.slide; blockMapIfNeeded()"  ng-show="data.slide" style="background-color:white;" >
+					<button class="button button-full button-stable button-small" style="margin-top:-8px; margin-bottom:0;"><i class="icon assertive ion-fibertel-up"></i></button>
+					<ion-item class="item" style="padding-top: 8px; padding-bottom: 8px;" ng-repeat="sucursal in data.sucursalesToShow | limitTo: 3" ng-click="centerMapInSucursal(sucursal)">
+						<div class="row" style="padding:0px;">
+							<div class="col col-70" style="font-family: latolight; color:#f02933; font-size:18px; margin: 0px; padding:0px;">{{sucursal.name}}</div>
+							<div ng-show="!isNaN(sucursal.distanceToShow)" class="col col-30" align="right" style="font-family: latolight; color:#f02933; font-size:18px; margin: 0px; padding:0px;">{{sucursal.distanceToShow}} {{sucursal.distanceUnit}}</div>
+						</div>
+						<p style="font-family: latolight; color:#808080; font-size:14px; margin: 0px;">{{sucursal.address}}</p>
+						<p style="font-family: latolight; color:#808080; font-size:14px; margin: 0px;">{{sucursal.ubicacion}}</p>
+					</ion-item>
+				</ion-list>
+
+		</div>
+
+	</ion-content>
+
+</ion-view>

@@ -1,0 +1,49 @@
+<ion-view hide-nav-bar="true">
+  <ion-content class="fibertel-login-content">
+      <div style="display:table;height:100%; width: 100%;">
+      <div class="fibertel-container">
+         <div class="fibertel-header-login">
+          <div class="contenedor">
+            <div class="fila">
+              <div class="col"><img ng-src="img/logos.svg" style="height:64px;"></img></div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="columna">
+
+            <form name="myForm" ng-submit="performLogin(data.loginData.username, data.loginData.password)">
+
+              <input type="email" id="user" placeholder="Nombre de Usuario" name="email" ng-model="data.loginData.username" required  ng-click="data.showErrorLogin=false">
+
+              <input type="password" id="pass" ng-minlength="1" placeholder="Contraseña" name="password" ng-model="data.loginData.password" required ng-click="data.showErrorLogin=false">
+
+              <input type="submit" value="Ingresar" ng-click="data.showErrorLogin=true">
+              <a class="pass" ng-click="openPasswordRecover()">¿Olvidaste tu contraseña?</a>
+              <a class="pass rojo" ng-click="openRegistration()">¿Aún no estás registrado?</a>
+
+              <div ng-show="data.showErrorLogin">
+                <div role="alert">
+                  <p class="pass rojo" ng-if="myForm.email.$error.required">
+                    *El Usuario es requerido</p>
+                  <p class="pass rojo" ng-if="myForm.password.$error.required">
+                    *La Contraseña es requerida</p>
+                  <p class="pass rojo" ng-if="myForm.email.$error.email">
+                    *El usuario debe ser un mail válido</p>
+                  <p class="pass rojo" ng-if="myForm.password.$error.minlength">
+                    *La Contraseña debe tener al menos 8 caracteres
+                  </p>
+                </div>
+              </div>
+
+            </form>
+
+
+
+          </div>
+        </div>
+      </div>
+      </div>
+
+  </ion-content>
+</ion-view>

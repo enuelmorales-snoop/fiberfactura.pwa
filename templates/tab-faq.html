@@ -1,0 +1,46 @@
+<ion-view hide-back-button="true">
+	<div class="bar bar-subheader bar-subheader-custom">
+		<div class="tab-fibertel-title">
+      Preguntas Frecuentes
+    </div>
+	</div>
+
+	<ion-content class="tab-fibertel-content has-subheader content-custom" delegate-handle="contentDelegate" overflow-scroll="false">
+		<ion-list>
+			<ion-item id="faq{{$index}}" ng-repeat="faq in data.faqs track by data.faqs[$index]._id | orderBy: data.faqs[$index]._id" class="item item-text-wrap noflash-item" style="padding-top: 34px; padding-bottom: 34px;" ng-click="scrollToTop($index,faq)">
+
+				<div ng-if="!faq.expanded" class="item-icon-right" style="font-family: latoregular; color:#808080; font-size:18px; margin: 0px; padding:0px;">
+					{{faq.question}}
+					<i class="icon ion-chevron-down icon-accessory" style="color:#808080; align-items:center;"></i>
+				</div>
+
+				<div ng-if="faq.expanded" class="item-icon-right" style="font-family: latoregular; color:#f02933; font-size:18px; margin: 0px; padding:0px;">
+					{{faq.question}}
+					<i class="icon ion-chevron-up icon-accessory" style="color:#f02933; padding-top:39px; align-items:baseline;"></i>
+				</div>
+
+				<!-- Estilo aplicado a smartphone -->
+				<h3 ng-if="faq.expanded" class="ocultar_en_tablet" style="font-family: latoregular; color:#808080; text-align: justify; font-size:17px; margin: 0px; padding-top:15px;" ng-bind-html="trustAsHtml(faq.answer)">
+				</h3>
+
+				<!-- Estilo aplicado a tablet -->
+				<h3 ng-if="faq.expanded" class="botones_tablet" style="line-height: 25px;font-family: latoregular; color:#808080; text-align: justify; font-size:17px; margin: 0px; padding-top:15px;" ng-bind-html="trustAsHtml(faq.answer)">
+				</h3>
+
+
+
+
+  		</ion-item>
+
+			<div style="height:30px;"></div>
+
+		</ion-list>
+
+  </ion-content>
+
+	<a class="bar bar-footer bar-stable sub-footer boton_faq_tablet item-icon-right" style="background-color:#e3e3e3" ng-click="goToState('tab.faq-informacionLegal')" >
+		<h2 style="font-family:latoregular; font-size:17px; padding-left:15px; padding-top:8px; color:#2c2c2c;">Información Legal</h2>
+		<i class="icon ion-chevron-right icon-accessory" style="color:#2c2c2c;"/></i>
+	</a>
+
+</ion-view>

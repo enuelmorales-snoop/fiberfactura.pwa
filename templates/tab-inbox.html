@@ -1,0 +1,36 @@
+<ion-view hide-back-button="true">
+	<div class="bar bar-subheader bar-subheader-custom">
+		<div class="tab-fibertel-title">
+			Bandeja de Entrada
+		</div>
+  </div>
+	<ion-content class="tab-fibertel-content has-subheader content-custom" overflow-scroll="false">
+	  <div ng-show="emptyInBox()" class="empty-inbox">
+	  </div>
+
+	<ion-list>
+      <ion-item ng-show="!inbox.removed" class="item-remove-animate item-icon-left item-icon-right notificationItem" type="item-text-wrap" ng-repeat="inbox in inboxes | orderBy: '-orderDate'" href="#/tab/inbox/{{inbox.id}}" ng-click="markAsRead(inbox);">
+
+				<div ng-show="inbox.read">
+					<i class="icon icon-fibertel-inbox-read" style="color:#808080;"></i>
+					<h2 style="font-size: 17px; font-family:'latoregular'; color:#808080; margin:0px;">{{inbox.title}}</h2>
+					<p style="font-size: 13px; color:#808080;">{{inbox.date}}</p>
+					<i class="icon ion-chevron-right icon-accessory" style="color:#808080;"></i>
+				</div>
+
+				<div ng-show="!inbox.read">
+					<i class="icon icon-fibertel-inbox-outline-small" style="color:#f02933;"></i>
+					<h2 style="font-size: 17px; font-family:'latoregular'; color:#f02933; margin:0px;">{{inbox.title}}</h2>
+					<p style="font-size: 13px;">{{inbox.date}}</p>
+					<i class="icon ion-chevron-right icon-accessory" style="color:#f02933;"/></i>
+				</div>
+
+        <ion-option-button  ng-click="remove(inbox)" class="button-fibertel">
+          Eliminar
+        </ion-option-button>
+
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

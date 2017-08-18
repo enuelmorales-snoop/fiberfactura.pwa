@@ -1,0 +1,66 @@
+<ion-view hide-back-button="true">
+	<ion-content class="tab-fibertel-content">
+
+		<ion-item class="item-avatar item-icon-right fibertel-home-header" type="item-text-wrap" ng-click="openHomePopover($event)">
+	        <img ng-src="img/avatar-home.svg">
+	        <h2 class="fibertel-home-address">{{data.contratos[data.selectedContrato].address[0]}}</h2>
+	        <p class="fibertel-home-area">{{data.contratos[data.selectedContrato].address[1]}}</p>
+	        <i id="home-header-icon-right" class="icon ion-chevron-down icon-accessory" style="color: #f02933;"></i>
+    	</ion-item>
+
+	<div class="padding">
+
+		<div class="card">
+			<div class="item item-text-wrap" style="padding-top:12px; padding-bottom:12px;">
+    	<h2 style="color:#808080;">Titular: <span style="color:#2c2c2c;">{{data.user.name}} {{data.user.lastName}}</span></h2>
+    	<h2 style="color:#808080;">N° de Cliente: <span style="color:#2c2c2c;">{{data.user.nCliente}}</span></h2>
+				<h2 style="color:#808080;">N° de Referencia de Pago: <span style="color:#2c2c2c;">{{data.contratos[data.selectedContrato].nReferenciaDePago}}</span></h2>
+			</div>
+		</div>
+
+		<div class="row" style="text-align:center; padding:0px;">
+
+		    <div class="card col" style="margin-right:8px;" ng-click="openPDF(data.contratos[data.selectedContrato].facturas[0])">
+		      <div class="item item-text-wrap" style="padding:0px;">
+		        <p style="color:#808080; padding:7px; margin:0px;">Última Factura</p>
+							<hr class="fibertel-hr">
+		        <h2 style="color:#f02933; font-size:34px;"><small style="vertical-align: middle;">$</small>{{data.contratos[data.selectedContrato].facturas[0].importe}}</h2>
+		        <p style="color:#f02933; font-size:12px; padding-bottom:5px; margin:0px;">Vencimiento {{data.contratos[data.selectedContrato].facturas[0].vencimiento.split('-')[0]}}.{{data.contratos[data.selectedContrato].facturas[0].vencimiento.split('-')[1]}}.{{data.contratos[data.selectedContrato].facturas[0].vencimiento.split('-')[2]}}</p>
+					<div class="fibertel-card-button" >
+				      Ver Factura
+				    </div>
+				</div>
+		    </div>
+
+		    <div class="card col" style="margin-left:8px;" ng-click="goToState('tab.misFacturas')">
+		      <div class="item item-text-wrap" style="padding:0px;">
+							<p style="color:#808080; padding:7px; margin:0px;">Estado de Cuenta</p>
+							<hr class="fibertel-hr">
+		        			<h2 ng-show="data.contratos[data.selectedContrato].balance != 0" style="color:#f02933; font-size:34px;"><small style="vertical-align: middle;">$</small>{{data.contratos[data.selectedContrato].balance}}</h2>
+		        			<p ng-show="data.contratos[data.selectedContrato].balance != 0" style="color:#f02933; font-size:12px; padding-bottom:5px; margin:0px;">Total a pagar</p>
+										<h2 ng-show="data.contratos[data.selectedContrato].balance == 0" style="color:#808080; font-size:34px;"><small style="vertical-align: middle;">$</small>{{data.contratos[data.selectedContrato].balance}}</h2>
+										<p ng-show="data.contratos[data.selectedContrato].balance == 0" style="font-size:12px; padding-bottom:5px; margin:0px;">No registra deuda</p>
+						<div class="fibertel-card-button">
+					      Ver Historial
+					    </div>
+				</div>
+	    	</div>
+
+  		</div>
+
+		<a ng-href="tel:08101222225" class="fibertel-button-red ocultar_en_tablet" style="margin-top:20px;" ng-click="trackEventPagoTelefonico()">
+			<i class="icon icon-fibertel-phone" style="padding-right:20px;"></i>Pago Telefónico
+		</a>
+
+		<a class="fibertel-button-red botones_tablet" style="margin-top:20px;width: 100%;" ng-click="goToState('tab.home-pago-telefonico')">
+			<i class="icon icon-fibertel-phone" style="padding-right:20px;"></i>Pago Telefónico
+		</a>
+
+		<a class="fibertel-button-grey" style="margin-top:20px;" ng-click="goToState('tab.misFacturas-mediosDePago')">
+			<i class="icon icon-fibertel-medios-pago" style="padding-right:20px;"></i>Medios de Pago
+		</a>
+
+	</div>
+
+  </ion-content>
+</ion-view>

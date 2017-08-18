@@ -1,0 +1,34 @@
+<ion-view hide-back-button="true">
+	<div class="bar bar-subheader bar-subheader-custom">
+		<div class="tab-fibertel-title">
+			Contacto
+		</div>
+  </div>
+
+	<ion-content class="tab-fibertel-content has-subheader content-custom">
+		<div class="padding">
+
+			<div class="card" style="margin-top: 20px;">
+	      <ion-item class="item row item-icon-right" style="padding-top:18px; padding-bottom:18px;" ng-click="goToState('tab.sucursales')">
+	        <img src="img/sucursales.svg" style="margin-left:5px; max-width:35px; max-height:35px;"></img>
+	        <h2 style="font-family:latoregular; font-size:16px; padding-left:15px; padding-top:8px;">Nuestras Sucursales</h2>
+	        <i class="icon ion-chevron-right icon-accessory" style="color: #f02933;"></i>
+	      </ion-item>
+	    </div>
+
+			<a class="fibertel-button-red" style="text-align:left; padding-left:60px; margin-top:40px;" ng-href="tel:08101222225">
+				<i class="icon icon-fibertel-phone-small" style="padding-right:20px;"></i>Atención al Cliente
+			</a>
+
+			<a class="fibertel-button-red" style="text-align:left; padding-left:60px; margin-top:30px;" ng-href="tel:08101227342">
+				<i class="icon icon-fibertel-phone-small" style="padding-right:20px;"></i>Ventas
+			</a>
+			<!--TODO: Volver a implementar cuando la funcionalidad este lista y nos den el ok-->
+			<!-- <a class="fibertel-button-grey" style="text-align:left; padding-left:60px; margin-top:30px;" onclick="window.open('http://chat.cablevisionfibertel.com.ar/ChatClient/login.xhtml', '_system', 'location=yes')">
+				<i class="icon icon-fibertel-chat" style="padding-right:13px;"></i>Chat Online
+			</a> -->
+
+		</div>
+
+  </ion-content>
+</ion-view>

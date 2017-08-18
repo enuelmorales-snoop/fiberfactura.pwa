@@ -1,0 +1,73 @@
+{
+    "defaultFAQs": [
+      {
+        "_id": 0,
+        "question": "Última factura vs. Estado de cuenta",
+        "answer": "El importe de tu última factura puede diferir del saldo que figura en el Estado de cuenta, esto es porque, tu Estado de Cuenta se actualiza constantemente en base a los movimientos que realices, mientras que tu última factura es un importe que no varía porque es el facturado en el último período.",
+        "expanded": false
+      }
+      ,
+      {
+        "_id": 1,
+        "question": "¿Cómo leer y entender mi factura?",
+        "answer": "<ul style='list-style:inherit; padding-left:20px;'><li>En la parte superior encontrarás un resumen de tu factura, saldo del mes y fecha de vencimiento junto con tu número de cliente. </li><li>En el margen superior derecho encontrarás los movimientos de tu cuenta hasta la fecha indicada, y en el caso que lo hubiere, verás también los saldos acumulados, pagos posteriores al vencimiento de la factura, y notas de crédito.</li><li>Del lado izquierdo debajo de los datos personales encontrarás el número de referencia de pago, con este número podrás abonar tu factura sin tenerla en papel.</li><li>En la sección central encontrarás el importe por los servicios contratados.<ul style='list-style:inherit; padding-left:10px;'><li style='margin-left:15px; list-style:circle;'>  Tené en cuenta que el total de esta sección te muestra el valor por el mes facturado.</li></ul></li></ul>",
+        "expanded": false
+      }
+      ,
+      {
+        "_id": 2,
+        "question": "¿Cómo leer la primera factura luego de contratar un nuevo servicio?",
+        "answer": "<ul style='list-style:inherit; padding-left:20px;'><li>En la parte superior encontrarás un resumen de tu factura, saldo del mes y fecha de vencimiento junto con tu número de cliente.</li><li>En el margen superior derecho encontrarás los movimientos de tu cuenta hasta la fecha indicada, y en el caso que lo hubiere, verás también los saldos acumulados, pagos posteriores al vencimiento de la factura, y notas de crédito.</li><li>Del lado izquierdo debajo de los datos personales encontrarás el número de referencia de pago, con este número podrás abonar tu factura sin tenerla en papel.</li><li>En la sección central encontrarás:<ul style='list-style:inherit; padding-left:10px;'><li style='margin-left:10px; list-style:circle;'>El importe por la cantidad de días proporcionales desde la instalación hasta fin de mes.</li><li style='margin-left:15px; list-style:circle;'>El valor correspondiente a un mes por adelantado ya que así es nuestra modalidad de facturación.</li><li style='margin-left:15px; list-style:circle;'>Las promociones o descuentos asignados a tu servicio con su respectivo valor.</li><li style='margin-left:15px; list-style:circle;'>El costo de instalación en caso que corresponda.<br>Tené en cuenta que según la fecha de instalación recibirás el importe a un mes más, correspondiente al que no recibiste la factura porque la instalación de tu servicio fue posterior a nuestro proceso de facturación.</li></ul></li></ul>",
+        "expanded": false
+      }
+      ,
+      {
+        "_id": 3,
+        "question": "Conocer el vencimiento de mi factura",
+        "answer": "Desde la Home encontrarás el vencimiento de tu factura debajo del saldo de la misma en la sección “Última factura”.",
+        "expanded": false
+      }
+      ,
+      {
+        "_id": 4,
+        "question": "Ver y descargar mis facturas online",
+        "answer": "Ingresando en la sección “Mis facturas” vas a poder consultar tus últimas 12, acceder a cada una de ellas y descargártelas al dispositivo que quieras.",
+        "expanded": false
+      }
+      ,
+      {
+        "_id": 5,
+        "question": "¿Qué pasa si pago fuera de término?",
+        "answer": "Todo pago posterior a la fecha de vencimiento, generará un gasto administrativo y lo verás reflejado en tu próxima factura en la sección central como “Gasto Administrativo”.<br>Tené en cuenta que:<br><ul style='list-style:inherit; padding-left:20px;'><li>No es necesario que llames para confirmarnos que realizaste el pago.</li><li>El impacto de tu pago en sistema podrá demorar hasta 72 horas hábiles.</li></ul>",
+        "expanded": false
+      }
+      ,
+      {
+        "_id": 6,
+        "question": "¿Cómo ver si realizaron notas de crédito?",
+        "answer": "En la sección estado de cuenta, la verás detallada con el nombre “Créditos”.",
+        "expanded": false
+      }
+      ,
+      {
+        "_id": 7,
+        "question": "Medios de pago disponibles",
+        "answer": "Ingresando desde la “Home” o “Mis Facturas” encontrarás la opción para conocer los medios disponibles para abonar tu factura.",
+        "expanded": false
+      }
+      ,
+      {
+        "_id": 8,
+        "question": "Pagar sin la factura en papel",
+        "answer": "Ya no es necesario que tengas tu factura impresa para poder abonarla.<br>Del lado izquierdo de tu factura, debajo de los datos personales del titular encontrarás tu número de referencia de pago con el que podrás abonar tu saldo acercándote a cualquier Rapipago o Pago fácil.",
+        "expanded": false
+      }
+      ,
+      {
+        "_id": 9,
+        "question": "¿Por qué me cobran días proporcionales?",
+        "answer": "Los días proporcionales son los días transcurridos desde la instalación del servicio hasta fin de ese mes. Tienen costo ya que en esos días el servicio estuvo activo para ser utilizado.",
+        "expanded": false
+      }
+    ]
+}

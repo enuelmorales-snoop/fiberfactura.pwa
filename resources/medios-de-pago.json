@@ -1,0 +1,38 @@
+{
+    "mediosDePago": [
+      {
+        "id": 0,
+        "title": "Débito Directo",
+        "description": "Si tenés cuenta corriente o caja de ahorro y sos titular de la cuenta, comunicate con nosotros al 0810-122-2225 y solicita la adhesión al Débito Directo indicando el número de CBU o solicitalo directamente vía Home Banking.",
+        "expanded": false
+      }
+      ,
+      {
+        "id": 1,
+        "title": "Pagos en Efectivo",
+        "description": "<b>Podés abonar tu factura en cualquier punto de cobranza de:</b> <br><br> <dl><dd>-Rapipago</dd><dd>-Pago Fácil</dd><dd>-Provincia Net</dd><dd>-Cobro Express</dd><dd>-Ripsa</dd><dd>-BICA</dd><dd>-Prontopago</dd><dd>-Polsa</dd><dd>-Multipago</dd></dl> <b>Consultá al dorso de tu factura cuáles de estas entidades están habilitadas en tu localidad.</b><br><br> <dl><dd>-Banco Credicoop</dd><dd>-Banco de la Nación Argentina</dd><dd>-Banco Provincia</dd><dd>-Banco Supervielle</dd><dd>-Banco Ciudad</dd><dd>-Banco Patagonia</dd><dd>-HSBC</dd><dd>-ITAU</dd><dd>-Banco Saenz</dd><dd>-Nuevo Banco Del Chaco S.A.</dd><dd>-Banco Industrial</dd><dd>-Banco de Santa Fe</dd><dd>-BPN</dd><dd>-Bisel</dd><dd>-Citibank</dd><dd>-El Banco</dd><dd>-Banco de Córdoba</dd><dd>-Santander Río</dd><dd>-Macro</dd><dd>-Banco Julio</dd><dd>-Banco de La Pampa</dd><dd>-Nuevo Banco De Entre Ríos</dd></dl> <b>Podés efectuar tu pago a través de los cajeros automáticos de las redes BANELCO Y LINK. </b><br><br> BANELCO<br><br>Necesitarás anteponer ''00''al número de referencia de pago, ubicado debajo de tus datos en la factura.<br><br> LINK<br><br>Necesitarás anteponer ''083+00'' al número de referencia de pago, ubicado debajo de tus datos en la factura. ",
+        "expanded": false
+      },
+
+      {
+        "id": 2,
+        "title": "Pagos por Internet",
+        "description": "<div> <b>Pago Mis Cuentas</b> <img src=\"img/pagomiscuentas.svg\" width=\"120px\" style=\"float:right\"> </div><div><br>Luego de generar tu clave de acceso a Home Banking en cualquier cajero Banelco, entrá a pagomiscuentas y pagá tu factura en ''seleccione otras cuentas'' </div><br><div><b>Link</b> <img src=\"img/link.svg\" width=\"35px\" style=\"float:right\"></div><div><br>Podés pagar a través de www.linkpagos.com.ar, obteniendo primero tu clave desde cualquier cajero automático de la Red Link (opción Clave / Clave Internet Home Banking).</div> <div><br><b>Rapipago</b> <img src=\"img/rapipago.svg\" width=\"70px;\" style=\"float:right\"></div> <div><br>Ingresando a e-rapipago podés imprimir tu comprobante de pago y abonarlo en efectivo en cualquiera de sus más de 2500 sucursales en todo el país.</div> <div><br><b>Visa</b> <img src=\"img/visa.svg\" width=\"60px\" style=\"float:right\"></div> <div><br> Podés pagar tu factura llamando al (011) 4379-7700 ó por internet: www.visa.com.ar</div>",
+        "expanded": false
+      },
+
+      {
+        "id": 3,
+        "title": "Pago Telefónico",
+        "description": "Podés pagar por teléfono, llamando al 0810-122-2225, las 24 hs., todos los días del año.<br> <br> <b>Atención al cliente </b> <br>Podés pagar por teléfono, llamando al 0810-122-2225, las 24 hs., todos los días del año.<br><br> <b>Visa</b> <br>Podés pagar tu factura llamando al (011) 4379-7700.",
+        "expanded": false
+      },
+
+      {
+        "id": 4,
+        "title": "Débito Automático",
+        "description": "Podés adherirte llamando al 0810-122-2225 o en la sucursal de tu localidad. Recordá que al renovar tu Tarjeta de Crédito debés comunicarnos tu nuevo número ya que el débito no se transfiere en forma automática.",
+        "expanded": false
+      }
+    ]
+}

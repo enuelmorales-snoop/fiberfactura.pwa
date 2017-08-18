@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- PDF.js mozilla js -->
+    <script src="lib/pdfjs/build/pdf.js"></script>
+    <script src="lib/pdfjs/build/pdf.worker.js"></script>
+
+    <!-- pouchdb js -->
+    <script src="lib/pouchdb/js/pouchdb-5.1.0.min.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/mainCtrl.js"></script>
+    <script src="js/controllers/welcomeCtrl.js"></script>
+    <script src="js/controllers/loginCtrl.js"></script>
+    <script src="js/controllers/misFacturasCtrl.js"></script>
+    <script src="js/controllers/mediosDePagoCtrl.js"></script>
+    <script src="js/controllers/inboxCtrl.js"></script>
+    <script src="js/controllers/homeCtrl.js"></script>
+    <script src="js/controllers/tabsCtrl.js"></script>
+    <script src="js/controllers/misDatosCtrl.js"></script>
+    <script src="js/controllers/faqCtrl.js"></script>
+    <script src="js/controllers/informacionLegalCtrl.js"></script>
+    <script src="js/controllers/contactoCtrl.js"></script>
+    <script src="js/controllers/sucursalesCtrl.js"></script>
+    <script src="js/services/loginService.js"></script>
+    <script src="js/services/pdfService.js"></script>
+    <script src="js/services/userService.js"></script>
+    <script src="js/services/facturasService.js"></script>
+    <script src="js/services/contratosService.js"></script>
+    <script src="js/services/faqService.js"></script>
+    <script src="js/services/sucursalesService.js"></script>
+    <script src="js/services/mediosDePagoService.js"></script>
+    <script src="js/services/inboxService.js"></script>
+    <script src="js/services/mapService.js"></script>
+    <script src="js/services/modelService.js"></script>
+  </head>
+  <body ng-app="appFactura" ng-controller="MainCtrl">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <ion-nav-bar class="bar-light" align-title="left">
+      <ion-nav-buttons side="left">
+        <img src="img/logos.svg" width="180px" height="85%" ng-style="{'margin-top': marginTopHeaderIcons}" class="logos-tablet" ng-click="goToState('tab.home')">
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button ng-style="{'color': navbarButtonColor, 'padding-top': paddingTopHeaderUserIcon, 'margin-top': marginTopHeaderUserIcon}" class="button icon-right icon-fibertel-user-black nombre-usuario" ng-click="openNavBarPopover($event)">
+          <h5 ng-style="{'color': navbarButtonColor}" class="fibertel-username-navbar">{{data.user.name.split(' ')[0]}}</h5>
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <ion-nav-view></ion-nav-view>
+
+    <script id="templates/navbar-popover.html" type="text/ng-template">
+  		<ion-popover-view class="navbar-popover">
+  	  	<ion-content>
+  	    	<ion-list>
+            <ion-item class="item item-text-wrap fibertel-navbar-popover-item">
+              <a style="color:#ffffff; text-decoration:none" href="#/tab/home/misDatos" ng-click="navbarPopover.hide()">
+                Mis Datos
+              </a>
+            </ion-item>
+            <ion-item class="item item-text-wrap fibertel-navbar-popover-item" ng-click="logOut()">
+              <a style="color:#ffffff; text-decoration:none">
+                Cerrar Sesión
+              </a>
+            </ion-item>
+  	      </ion-list>
+  	    </ion-content>
+  	  </ion-popover-view>
+  	</script>
+
+    <script id="templates/home-popover.html" type="text/ng-template">
+  		<ion-popover-view class="home-popover">
+      <ion-content>
+        <ion-scroll zooming="true" direction="y" style="max-height:250px;">
+          <ion-list>
+            <ion-item ng-repeat="contrato in data.contratos track by $index" class="item item-text-wrap fibertel-home-popover-item" ng-click="changeSelectedContrato($index)">
+              <a style="color:#ffffff; text-decoration:none">
+                {{contrato.address[0]}}
+              </a>
+            </ion-item>
+          </ion-list>
+        </ion-scroll>
+      </ion-content>
+  	  </ion-popover-view>
+  	</script>
+
+    <script id="templates/facturas-popover.html" type="text/ng-template">
+  		<ion-popover-view class="facturas-popover">
+  	  	<ion-content>
+          <ion-scroll zooming="true" direction="y" style="max-height:250px;">
+            <ion-list>
+              <ion-item ng-repeat="contrato in data.contratos track by $index" class="item item-text-wrap fibertel-home-popover-item" ng-click="changeSelectedContrato($index)">
+                <a style="color:#ffffff; text-decoration:none">
+                  {{contrato.address[0]}}
+                </a>
+              </ion-item>
+            </ion-list>
+          </ion-scroll>
+  	    </ion-content>
+  	  </ion-popover-view>
+  	</script>
+
+  </body>
+</html>
