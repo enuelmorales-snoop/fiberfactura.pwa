@@ -24,7 +24,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "aliceblue",
-  "background_color": "white",
+  "background_color": "#ffffff",
   "related_applications": [{
     "platform": "web",
     "url":"https://enuelmorales-snoop.github.io/fiberfactura.pwa/index.html"
