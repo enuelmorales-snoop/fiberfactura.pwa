@@ -23,6 +23,15 @@ angular.module('appFactura', ['ionic', 'appFactura.controllers', 'appFactura.mod
       window.StatusBar.styleDefault();
     }
 
+    window.addEventListener('beforeinstallprompt', function(e) {
+      console.log('beforeinstallprompt Event fired');
+      if (window.matchMedia('(display-mode: standalone)').matches) {
+        console.log("Thank you for installing our app!");
+        e.preventDefault();
+        return false;
+      }
+    });
+
     registerPushNotificationHandler($ionicPopup);
 
     if ( $window.analytics ) {
