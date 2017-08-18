@@ -1,0 +1,30 @@
+{
+  "lang": "en",
+  "name": "PWA App",
+  "short_name": "PWA App",
+  "gcm_sender_id": "272789329667",
+  "icons": [
+    {
+      "src": "img/logo128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "img/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "scope": "/fiberfactura.pwa/",
+  "start_url": "/fiberfactura.pwa/index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "aliceblue",
+  "background_color": "red",
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://enuelmorales-snoop.github.io/fiberfactura.pwa/index.html"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+// https://developer.mozilla.org/en-US/docs/Web/Manifest
+{
+  "lang" : "en",
+  "name" : "PWA App",
+  "short_name" : "PWA App",
+  // Es el id del proyecto de Google Cloud Platform que usamos para enviar WebPush.
+  // Podemos dejar este que es uno que creé para estas apps del tutorial.
+  "gcm_sender_id": "272789329667",
+  // Para mostrar el "cartelito instalador" ( App banner ), chrome nos pide:
+  // PNG format of at least 144x144px is required, and the sizes attribute must be set`
+  "icons" : [{
+      "src" : "img/logo128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src" : "img/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }    ],
+  "scope": "/fiberfactura.pwa/",
+  "start_url": "/fiberfactura.pwa/index.html",
+  // standalone muestra la barra de estado pero no el chrome del browser
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "aliceblue",
+  "background_color": "red",
+  "related_applications": [{
+    "platform": "web",
+    "url":"https://enuelmorales-snoop.github.io/fiberfactura.pwa/index.html"
+  }]
+}
