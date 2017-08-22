@@ -1,8 +1,8 @@
 // https://developer.mozilla.org/en-US/docs/Web/Manifest
 {
-  "lang" : "en",
-  "name" : "PWA App",
-  "short_name" : "PWA App",
+  "lang" : "es",
+  "name" : "Clientes",
+  "short_name" : "Clientes",
   // Es el id del proyecto de Google Cloud Platform que usamos para enviar WebPush.
   // Podemos dejar este que es uno que creé para estas apps del tutorial.
   "gcm_sender_id": "272789329667",

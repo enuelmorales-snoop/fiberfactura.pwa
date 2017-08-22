@@ -1,7 +1,7 @@
 {
-  "lang": "en",
-  "name": "PWA App",
-  "short_name": "PWA App",
+  "lang": "es",
+  "name": "Clientes",
+  "short_name": "Clientes",
   "gcm_sender_id": "272789329667",
   "icons": [
     {
